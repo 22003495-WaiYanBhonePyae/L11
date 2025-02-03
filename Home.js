@@ -21,15 +21,20 @@ const Home = ({navigation}) => {
             });
     }, []);
 
-  const renderItem = ({item, index, section}) => {
-    return (
-    <View style={styles.listStyle}>
-    <Text>{item.name}</Text>
-    </View>
-    );
-  };
+    const renderItem = ({ item }) => {
+        return (
+            <View style={styles.listStyle}>
+                <Text>{item.name}</Text>
+                <Button
+                    title="View Details"
+                    onPress={() => navigation.navigate("Details", { user: item })}
+                />
+            </View>
+        );
+    };
 
-   return (
+
+    return (
     <View>
       <StatusBar/>
 	  <Button title='Register' onPress={
